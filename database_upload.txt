@@ -1,0 +1,61 @@
+CREATE DATABASE rabit CHARSET UTF8 COLLATE utf8_hungarian_ci;
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS advertisements;
+
+
+CREATE TABLE users (
+id INT AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
+name VARCHAR(50) NOT NULL);
+
+CREATE TABLE advertisements (
+id INT AUTO_INCREMENT NOT NULL UNIQUE PRIMARY KEY,
+userid INT NOT NULL,
+title VARCHAR(255) NOT NULL);
+
+ALTER TABLE advertisements ADD CONSTRAINT advertisements_userid_users_id FOREIGN KEY (userid) REFERENCES users(id);
+
+INSERT INTO `users` VALUES 
+(1,'Purdy'),
+(2,'Sanford'),
+(3,'Mayer'),
+(4,'Gottlieb'),
+(5,'Gerhold'),
+(6,'Harris'),
+(7,'Smitham'),
+(8,'Ritchie'),
+(9,'Mohr'),
+(10,'Gutmann'),
+(11,'Purdy'),
+(12,'Watsica'),
+(13,'Gaylord'),
+(14,'Reinger'),
+(15,'Hilll'),
+(16,'Konopelski'),
+(17,'Walter'),
+(18,'Hansen'),
+(19,'Hills'),
+(20,'Larkin');
+
+INSERT INTO `advertisements` VALUES 
+(1,1,'But the snail replied \"Too.'),
+(2,2,'Time!\' \'Perhaps not,\' Alice.'),
+(3,3,'Mock Turtle. \'She can\'t.'),
+(4,4,'Alice doubtfully: \'it.'),
+(5,5,'When the Mouse in the back..'),
+(6,6,'Dormouse; \'--well in.\' This.'),
+(7,7,'This seemed to rise like a.'),
+(8,8,'Sir, With no jury or judge,.'),
+(9,9,'Alice soon came to ME, and.'),
+(10,10,'There seemed to Alice to.'),
+(11,11,'But, when the White Rabbit,.'),
+(12,12,'Mystery,\' the Mock Turtle.'),
+(13,13,'Alice joined the procession,.'),
+(14,14,'By the time he was obliged.'),
+(15,15,'Why, she\'ll eat a little.'),
+(16,16,'Caterpillar. This was quite.'),
+(17,17,'So she set to partners--\'.'),
+(18,18,'That\'s all.\' \'Thank you,\'.'),
+(19,19,'Improve his shining tail,.'),
+(20,20,'First, because I\'m on the.');
+

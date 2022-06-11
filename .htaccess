@@ -1,0 +1,5 @@
+RewriteEngine on
+# Rewrite url from PHP $_GET value
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([0-9a-zA-Z]+)$ index.php?p=$1 [NC,L] 
